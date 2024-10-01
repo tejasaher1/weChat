@@ -1,0 +1,13 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+}
+
+.mainDiv {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 90vh; 
+    color: #00bfff;
+}
