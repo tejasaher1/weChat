@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon App.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install && npm install --prefix Client && npm run build --prefix Client"
   },
   "author": "Tejas Aher",
   "license": "ISC",

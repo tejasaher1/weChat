@@ -5,6 +5,11 @@ const cors = require("cors"); // Import the CORS package
 const bodyParser = require("body-parser");
 const db = require("./Config/mongoose");
 const Router = require("./Routers/mainRoute");
+const path = require("path");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 app.use(bodyParser.json()); // Parse JSON bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
@@ -21,7 +26,26 @@ const server = app.listen(port, (error) => {
   console.log(`Server is running on port ${port}`);
 });
 
-// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+//-------------------------------------------------------------- Deployment -----------------------------------------------------------------------
+
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "../Client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "../" ,"Client", "build", "index.html"))
+  );
+} else {
+  app.get("*", (req, res) => {
+    res.status(503).send('Application is in maintenance, Please wait...');
+  });
+}
+
+
+// ----------------------------------------------------------- Socket connection --------------------------------------------------------------------
 
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
