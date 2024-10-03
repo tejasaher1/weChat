@@ -47,6 +47,15 @@ if (process.env.NODE_ENV === "production") {
 
 // ----------------------------------------------------------- Socket connection --------------------------------------------------------------------
 
+// const io = require("socket.io")(server, {
+//   pingTimeout: 60000,
+//   cors: {
+//     origin: "https://localhost:3000",
+//     // credentials: true,
+//   },
+// });
+
+
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
