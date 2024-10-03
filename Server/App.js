@@ -47,22 +47,22 @@ if (process.env.NODE_ENV === "production") {
 
 // ----------------------------------------------------------- Socket connection --------------------------------------------------------------------
 
-// const io = require("socket.io")(server, {
-//   pingTimeout: 60000,
-//   cors: {
-//     origin: "https://localhost:3000",
-//     // credentials: true,
-//   },
-// });
-
-
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://wechat-o0x5.onrender.com",
+    origin: "https://localhost:3000",
     // credentials: true,
   },
 });
+
+
+// const io = require("socket.io")(server, {
+//   pingTimeout: 60000,
+//   cors: {
+//     origin: "https://wechat-o0x5.onrender.com",
+//     // credentials: true,
+//   },
+// });
 
 io.on("connection", (socket) => {
   console.log("Connected to socket.io");
