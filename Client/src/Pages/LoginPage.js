@@ -26,7 +26,7 @@ export default function LoginPage() {
     }
 
     try{
-        const responce = await Axios.post(`http://localhost:8000/user/sign-in`, formData);
+        const responce = await Axios.post(`https://wechat-1go6.onrender.com/user/sign-in`, formData);
         if(responce.data.success){
           localStorage.setItem('jwtToken', responce.data.jwtToken)
           const data = JSON.stringify(responce.data);

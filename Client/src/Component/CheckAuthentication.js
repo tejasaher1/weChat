@@ -18,7 +18,7 @@ function CheckAuthentication({ setIsAuthenticated }) {
                 'authorization' : localStorage.getItem('jwtToken')
               }
             }
-            const responce = await Axios.get('http://localhost:8000/isAuthenticatedCheck', headers);
+            const responce = await Axios.get('https://wechat-1go6.onrender.com/isAuthenticatedCheck', headers);
             if(responce.data.success){
               setIsAuthenticated(true);
               if(location.pathname === '/' || location.pathname ==='/registartion' || location.pathname === '/sign-in'){

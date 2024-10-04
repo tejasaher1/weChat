@@ -30,7 +30,7 @@ export default function RegistrationPage() {
   }
 
     try{
-      const responce = await Axios.post(`http://localhost:8000/user/registartion`, formData);
+      const responce = await Axios.post(`https://wechat-1go6.onrender.com/user/registartion`, formData);
       if(responce.data.success){
         handleSuccess('Registration Successful')
         setTimeout(() => {
