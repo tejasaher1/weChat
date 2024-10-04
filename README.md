@@ -7,4 +7,5 @@ Tech Stack -
 Front End Development: React.js, Tailwind CSS, Chakra UI
 
 Back End Development: Node.js, Express.js, REST API
+
 Database: Mongo DB
