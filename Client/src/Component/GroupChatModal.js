@@ -44,7 +44,7 @@ const GroupChatModal = ({ children }) => {
           'authorization' : localStorage.getItem('jwtToken')
         }
       }
-      const { data } = await axios.get(`http://localhost:8000/user?search=${search}`, headers);
+      const { data } = await axios.get(`https://wechat-1go6.onrender.com/user?search=${search}`, headers);
     //   console.log(data);
       setLoading(false);
       setSearchResult(data);
@@ -82,7 +82,7 @@ const GroupChatModal = ({ children }) => {
               'authorization' : localStorage.getItem('jwtToken')
             }
           }
-      const { data } = await axios.post(`http://localhost:8000/chat/group`,{name: groupChatName,users: JSON.stringify(selectedUsers.map((u) => u._id))},headers);
+      const { data } = await axios.post(`https://wechat-1go6.onrender.com/chat/group`,{name: groupChatName,users: JSON.stringify(selectedUsers.map((u) => u._id))},headers);
       
       setChats([data, ...chats]);
       onClose();

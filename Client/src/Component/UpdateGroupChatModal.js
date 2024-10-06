@@ -34,7 +34,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           'authorization' : localStorage.getItem('jwtToken')
         }
 }
-      const { data } = await axios.get(`http://localhost:8000/user?search=${search}`, headers);
+      const { data } = await axios.get(`https://wechat-1go6.onrender.com/user?search=${search}`, headers);
       setLoading(false);
       console.log("Point 1",data);
       setSearchResult(data);
@@ -62,7 +62,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         }
       }
 
-      const { data } = await axios.put(`http://localhost:8000/chat/rename`,{chatId: selectedChat._id, chatName: groupChatName,}, headers);
+      const { data } = await axios.put(`https://wechat-1go6.onrender.com/chat/rename`,{chatId: selectedChat._id, chatName: groupChatName,}, headers);
 
       console.log(data._id);
       // setSelectedChat("");
@@ -113,7 +113,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           'authorization' : localStorage.getItem('jwtToken')
         }
       }
-      const { data } = await axios.put(`http://localhost:8000/chat/groupadd`,{chatId: selectedChat._id, userId: user1._id, }, headers);
+      const { data } = await axios.put(`https://wechat-1go6.onrender.com/chat/groupadd`,{chatId: selectedChat._id, userId: user1._id, }, headers);
 
       setSelectedChat(data);
       setFetchAgain(!fetchAgain);
@@ -151,7 +151,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
           'authorization' : localStorage.getItem('jwtToken')
         }
       } 
-      const { data } = await axios.put(`http://localhost:8000/chat/groupremove`, { chatId: selectedChat._id, userId: user1._id, }, headers );
+      const { data } = await axios.put(`https://wechat-1go6.onrender.com/chat/groupremove`, { chatId: selectedChat._id, userId: user1._id, }, headers );
 
       user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
       setFetchAgain(!fetchAgain);

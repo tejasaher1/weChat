@@ -26,7 +26,7 @@ const MyChats = ({ fetchAgain }) => {
         }
       }
 
-      const { data } = await axios.get("http://localhost:8000/chat", headers);
+      const { data } = await axios.get("https://wechat-1go6.onrender.com/chat", headers);
       setChats(data);
     } catch (error) {
       toast({

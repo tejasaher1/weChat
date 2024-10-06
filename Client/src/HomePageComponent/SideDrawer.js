@@ -52,7 +52,7 @@ function SideDrawer() {
                   'authorization' : localStorage.getItem('jwtToken')
                 }
         }
-        const { data } = await axios.get(`http://localhost:8000/user?search=${search}`, headers);
+        const { data } = await axios.get(`https://wechat-1go6.onrender.com/user?search=${search}`, headers);
         setLoading(false);
         setSearchResult(data);
 
@@ -82,7 +82,7 @@ function SideDrawer() {
           'authorization' : localStorage.getItem('jwtToken')
         }
       }
-      const { data } = await axios.post(`http://localhost:8000/chat`, { userId }, headers);
+      const { data } = await axios.post(`https://wechat-1go6.onrender.com/chat`, { userId }, headers);
       console.log(data);
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
