@@ -6,10 +6,7 @@ const uri = process.env.MONGODB_URI;
 
 // mongoose.connect("mongodb://127.0.0.1:27017/weChat");
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(uri);
 
 
 const db = mongoose.connection;

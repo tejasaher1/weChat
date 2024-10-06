@@ -140,6 +140,5 @@ module.exports.allUsers = async (req, res) => {
     : {};
 
   const users = await userModel.find(keyword).find({ _id: { $ne: req.user._id } });
-  console.log("users",users);
   res.send(users);
 };
