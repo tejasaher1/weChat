@@ -18,7 +18,7 @@ export default function LoginPage() {
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
-    // console.log("Client side data - ",formData);
+    console.log("Click out - ",e.target.name);
     const {Email, Password} = formData;
 
     if(!Email || !Password) {
@@ -43,6 +43,10 @@ export default function LoginPage() {
       }    
   };
 
+  const handleGuestUser = () => {
+    setFormData({Email:"guest@gmail.com", Password:"123"});
+  }
+
   return (
     <>
     
@@ -66,7 +70,11 @@ export default function LoginPage() {
               </div>
             </div>
             <button className={style.sign}>Sign in</button>
+            <br/>
+            <button className={style.sign} onClick={handleGuestUser}>Guest User</button>
           </form>
+          
+
           <div className={style.social_message}>
             <div className={style.line} />
             <p className={style.message}>Login with social accounts</p>

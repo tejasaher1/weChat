@@ -9,7 +9,7 @@ function CheckAuthentication({ setIsAuthenticated }) {
 
   useEffect(() => {
 
-      if (localStorage.getItem("jwtToken")) {
+      if (localStorage.getItem("jwtToken")) { 
 
         const fetchData = async () => {
           try{
